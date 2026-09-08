@@ -1,0 +1,21 @@
+projectName: ""
+
+podSecurity:
+  enforce: baseline
+  warn: restricted
+
+limits:
+  defaultRequestCpu: 10m
+  defaultRequestMemory: 64Mi
+  defaultLimitMemory: 256Mi
+  maxMemory: 2Gi
+
+quota:
+  requestsCpu: "2"
+  requestsMemory: 3Gi
+  limitsMemory: 4Gi
+  pods: "20"
+  pvcs: "5"
+
+networkPolicy:
+  denyEgress: false

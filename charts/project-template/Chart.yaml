@@ -1,0 +1,5 @@
+apiVersion: v2
+name: project-template
+description: Namespace с квотами, лимитами и сетевыми политиками
+type: application
+version: 0.1.0

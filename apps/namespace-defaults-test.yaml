@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ns-myproject
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/signifatee/k8s-lab-manifests.git
+    targetRevision: main
+    path: charts/project-template
+    helm:
+      values: |
+        projectName: myproject
+        quota:
+          requestsMemory: 2Gi
+          limitsMemory: 3Gi
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myproject
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
