@@ -1,18 +1,13 @@
 # k8s-lab-manifests
 Манифесты для деплоя приложений и сервисов на лабораторный стенд
 
-kubectl apply -f root/platform.yaml
-kubectl apply -f root/labs.yaml
+kubectl apply -f root/root-app.yaml
 
 Схема: app of apps
 
 root -> папка для root application
 
 apps -> папка с приложениями
-apps/platform -> syncPolicy: automated
-apps/labs -> syncPolicy: manual 
-
-platform -> для постоянных приложений
-labs -> для экспериментов и временных приложений
+syncPolicy: automated
 
 manifests -> папка с манифестами для применения
